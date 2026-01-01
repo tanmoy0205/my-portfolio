@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # My Portfolio CMS
 
 A modern, animated portfolio website built with Next.js, Supabase, and Framer Motion. Showcase your projects, skills, and connect with visitors through a beautiful, full-stack web application.
@@ -255,3 +256,6 @@ This project is open source and available under the MIT License.
 
 **Built with ❤️ using Next.js and Supabase**
 
+=======
+# my-portfolio
+>>>>>>> 3eb51b35197c6adf3fd3afbec32e0288ee34f3bd

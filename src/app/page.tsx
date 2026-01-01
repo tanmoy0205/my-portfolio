@@ -4,7 +4,6 @@ import { useRef } from 'react'
 import { motion } from 'framer-motion'
 import { HiExternalLink, HiStar } from 'react-icons/hi'
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
-import { BsCpu } from 'react-icons/bs'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import SocialIcons from '@/components/SocialIcons'
@@ -157,8 +156,8 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="mb-16"
           >
-            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-8">
-              {/* Left side - Badge */}
+            <div className="mb-8">
+              {/* Badge */}
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -170,21 +169,6 @@ export default function Home() {
                   <HiStar className="text-accent-cyan text-sm" />
                   <span className="text-xs font-semibold text-white uppercase tracking-wider">SELECTED WORK</span>
                 </div>
-              </motion.div>
-
-              {/* Right side - Text */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2, duration: 0.6 }}
-                className="flex flex-col items-end gap-1"
-              >
-                <div className="flex items-center gap-2 text-sm text-gray-400">
-                  <BsCpu className="text-accent-cyan" />
-                  <span className="font-semibold uppercase tracking-wider">BUILT, NOT IMAGINED</span>
-                </div>
-                <p className="text-xs text-gray-500">Every card below maps to a real repo / demo</p>
               </motion.div>
             </div>
 

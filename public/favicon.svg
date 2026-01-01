@@ -1,0 +1,24 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark background matching theme -->
+  <rect width="32" height="32" rx="6" fill="#0f0f10"/>
+  
+  <!-- Gradient definition matching website theme -->
+  <defs>
+    <linearGradient id="tsGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="50%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Letter T -->
+  <rect x="7" y="10" width="6" height="2.5" rx="1" fill="url(#tsGradient)"/>
+  <rect x="9" y="10" width="2" height="12" rx="1" fill="url(#tsGradient)"/>
+  
+  <!-- Letter S -->
+  <rect x="18" y="10" width="7" height="2.5" rx="1.25" fill="url(#tsGradient)"/>
+  <rect x="18" y="14.75" width="7" height="2.5" rx="1.25" fill="url(#tsGradient)"/>
+  <rect x="18" y="19.5" width="7" height="2.5" rx="1.25" fill="url(#tsGradient)"/>
+  <rect x="18" y="10" width="2" height="7.5" rx="1" fill="url(#tsGradient)"/>
+  <rect x="23" y="14.75" width="2" height="7.5" rx="1" fill="url(#tsGradient)"/>
+</svg>

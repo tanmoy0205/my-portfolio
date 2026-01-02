@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaEnvelope, FaInstagram, FaFacebookF } from 'react-icons/fa'
 import { HiPhone } from 'react-icons/hi'
 
 export default function Footer() {
@@ -11,13 +11,14 @@ export default function Footer() {
     { href: '/about', label: 'About' },
     { href: '/experience', label: 'Experience' },
     { href: '/projects', label: 'Projects' },
-    { href: '/#achievements', label: 'Achievements' },
+    { href: '/achievements', label: 'Achievements' },
   ]
 
   const socialLinks = [
     { icon: FaGithub, href: 'https://github.com/tanmoy0205', label: 'GitHub' },
     { icon: FaLinkedin, href: 'https://www.linkedin.com/in/tanmoy-saha-developer/', label: 'LinkedIn' },
-    { icon: FaEnvelope, href: 'mailto:dv.tanmoy.saha@gmail.com', label: 'Email' },
+    { icon: FaInstagram, href: 'https://www.instagram.com/t_a_n_m_o_y05?igsh=MWZyNnpzMm91cmY3Mw==', label: 'Instagram' },
+    { icon: FaFacebookF, href: 'https://www.facebook.com/share/1F2qRBrtVK/', label: 'Facebook' },
   ]
 
   const contactInfo = [
@@ -139,18 +140,15 @@ export default function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 + 0.3, type: "spring", stiffness: 200 }}
-                    whileHover={{ scale: 1.1, y: -3 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex items-center gap-3 px-4 py-2.5 sm:py-3 bg-dark-200/50 border border-gray-800/50 rounded-lg hover:border-accent-cyan/50 hover:bg-accent-cyan/10 transition-all duration-300 group"
+                    transition={{ delay: index * 0.1 + 0.3, duration: 0.5, ease: "easeOut" }}
+                    whileHover={{ x: 5 }}
+                    className="flex items-center gap-3 group"
                     aria-label={social.label}
                   >
-                    <div className="flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-dark-100/50 group-hover:bg-accent-cyan/20 transition-colors duration-300">
-                      <Icon className="text-gray-400 group-hover:text-accent-cyan transition-colors duration-300 text-base sm:text-lg" />
-                    </div>
+                    <Icon className="text-gray-400 group-hover:text-accent-cyan transition-colors duration-300 text-xl sm:text-2xl" />
                     <span className="text-gray-400 group-hover:text-accent-cyan transition-colors duration-300 text-sm sm:text-base font-medium">
                       {social.label}
                     </span>

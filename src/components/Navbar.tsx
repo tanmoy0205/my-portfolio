@@ -40,23 +40,12 @@ export default function Navbar({
     { href: '/about', label: 'About', isPage: true },
     { href: '/experience', label: 'Experience', isPage: true },
     { href: '/projects', label: 'Projects', isPage: true },
-    { href: '/#achievements', label: 'Achievements', isPage: false, ref: achievementsRef },
+    { href: '/achievements', label: 'Achievements', isPage: true },
   ]
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, ref?: React.RefObject<HTMLDivElement>) => {
-    e.preventDefault()
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     setIsOpen(false)
-    
-    if (pathname !== '/') {
-      // If not on homepage, redirect to homepage achievements section
-      window.location.href = '/#achievements'
-      return
-    }
-    
-    // If on homepage, scroll to achievements section
-    if (ref && scrollToSection) {
-      scrollToSection(ref)
-    }
+    // All links are page links now, so just let Next.js handle navigation
   }
 
   const isActive = (href: string) => {
@@ -97,39 +86,16 @@ export default function Navbar({
             {navLinks.map((link) => {
               const active = isActive(link.href)
               
-              if (link.isPage) {
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className={`relative transition-colors duration-200 ${
-                      active ? 'text-white' : 'text-gray-400 hover:text-white'
-                    }`}
-                  >
-                    {link.label}
-                    {active && (
-                      <motion.span
-                        layoutId="activeSection"
-                        className="absolute -bottom-1 left-0 right-0 h-[2px] bg-accent-cyan"
-                        initial={false}
-                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                      />
-                    )}
-                  </Link>
-                )
-              }
-              
               return (
-                <a
+                <Link
                   key={link.href}
                   href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href, link.ref)}
                   className={`relative transition-colors duration-200 ${
-                    pathname === '/' && active ? 'text-white' : 'text-gray-400 hover:text-white'
+                    active ? 'text-white' : 'text-gray-400 hover:text-white'
                   }`}
                 >
                   {link.label}
-                  {pathname === '/' && active && (
+                  {active && (
                     <motion.span
                       layoutId="activeSection"
                       className="absolute -bottom-1 left-0 right-0 h-[2px] bg-accent-cyan"
@@ -137,7 +103,7 @@ export default function Navbar({
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
-                </a>
+                </Link>
               )
             })}
             {user && (
@@ -203,14 +169,14 @@ export default function Navbar({
                 }
                 
                 return (
-                  <a
+                  <Link
                     key={link.href}
                     href={link.href}
-                    onClick={(e) => handleNavClick(e, link.href, link.ref)}
+                    onClick={(e) => handleNavClick(e, link.href)}
                     className="block text-gray-400 hover:text-white transition-colors py-2"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 )
               })}
               {user && (

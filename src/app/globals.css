@@ -159,7 +159,7 @@ html {
     transform: translateX(-33.333%);
   }
   100% {
-    transform: translateX(-66.666%);
+    transform: translateX(0);
   }
 }
 

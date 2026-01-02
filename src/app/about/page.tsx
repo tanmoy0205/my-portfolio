@@ -8,6 +8,7 @@ import SocialIcons from '@/components/SocialIcons'
 import DeveloperBackground from '@/components/DeveloperBackground'
 import TechStackSection from '@/components/TechStackSection'
 import TypingText from '@/components/TypingText'
+import EducationCard from '@/components/EducationCard'
 import { FaLinkedin, FaEnvelope, FaGithub } from 'react-icons/fa'
 
 const aboutContent = [
@@ -38,15 +39,16 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-24"
           >
-            {/* Profile Image */}
+            {/* Profile Image & Education Card */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="flex justify-center lg:justify-start"
+              className="flex flex-col items-center gap-8"
             >
+              {/* Profile Image */}
               <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80">
                 {/* Animated Backdrop Glow - Behind the image */}
                 <motion.div
@@ -97,6 +99,15 @@ export default function AboutPage() {
                   />
                 </div>
               </div>
+
+              {/* Education Card */}
+              <EducationCard
+                degree="Bachelor of Computer Applications (BCA)"
+                institution="Inspiria Knowledge Campus"
+                location="Siliguri, West Bengal, India"
+                period="2023 - 2027 (Expected)"
+                delay={0.3}
+              />
             </motion.div>
 
             {/* About Content */}
